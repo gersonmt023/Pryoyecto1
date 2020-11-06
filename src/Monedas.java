@@ -8,7 +8,6 @@
  *
  * @author famil
  */
-
 import java.util.Scanner;
 
 public class Monedas {
@@ -61,11 +60,8 @@ public class Monedas {
         double division11 = (int) divisiones(division10, moneda6);
         double monedas = division1 + division3 + division5 + division7 + division9 + division11;
         System.out.println("Se necesitan un total de " + (int) monedas + " monedas:"
-     + (int) division1 + " de 1000, " + (int) division3 + " de 500, " + (int) division5 + " de 100, " + (int) division7
-        + " de 10, " + (int) division9 + " de 5, " + (int) division11 + " de 1");
+                + (int) division1 + " de 1000, " + (int) division3 + " de 500, " + (int) division5 + " de 100, " + (int) division7
+                + " de 10, " + (int) division9 + " de 5, " + (int) division11 + " de 1");
 
-        
-
-      
-
-}}
+    }
+}

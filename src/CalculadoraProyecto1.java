@@ -50,7 +50,7 @@ public class CalculadoraProyecto1 {
         double num10;
         String operacion;
         System.out.println("Seleccione la operacion a Realizar(multiplicacion,division,suma,"
-                + "resta,potencia,promedio,Promedioarreglo,numero maximo)");
+                + "resta,potencia,promedio,Promedioarreglo,numero maximo,lista invertida)");
         operacion = datos.next();
         switch (operacion) {
             case "multiplicacion": {
@@ -117,40 +117,35 @@ public class CalculadoraProyecto1 {
                 }
 
                 System.out.println("Resultado=" + resultado);
-                for (int i = 1; i <= exponente; i++) {
-                    resultado = resultado * i;
-                    System.out.println(resultado);
-
-                }
+                break;
             }
             case "promedio": {
-
+                int suma = 0;
                 double resultado1;
-                System.out.println("Ingrese el número de datos a utilizar(Máximo 5)");
+                System.out.println("Ingrese el número de datos a utilizar.");
                 double data;
                 data = datos.nextDouble();
                 System.out.println("Ingrese los numeros a calcular, presione enter para pasar al siguiente número"
                         + "(Existen 5 espacios disponibles, en caso de no tener más datos coloque 0)");
-                num1 = datos.nextDouble();
-                num2 = datos.nextDouble();
-                num3
-                        = datos.nextDouble();
-                num4 = datos.nextDouble();
-                num5 = datos.nextDouble();
-                resultado1 = (num1 + num2 + num3 + num4 + num5);
-                double resultado = divisiones(resultado1, data);
+                for (int i = 0; i < data; i++) {
+
+                    num1 = datos.nextDouble();
+
+                    suma += num1;
+                }
+                double resultado = divisiones(suma, data);
                 System.out.println("El promedio es=" + resultado);
                 break;
             }
             case "Promedioarreglo": {
                 double sumar = 0;
                 double datoso;
-                double[] arreglos = new double[10];
 
-                System.out.println("Introduzca la cantidad de datos por analizar(max 10)");
-                datoso = datos.nextInt();
-                System.out.println("A continuación deberá introducir cada uno de los números con un máximo de 10, en caso de haber introducido todos los datos y sobrar espacios rellenar con 0");
-                for (int i = 0; i < 10; i++) {
+                System.out.println("Introduzca la cantidad de datos por analizar");
+                datoso = datos.nextDouble();
+                double[] arreglos = new double[(int) datoso];
+                System.out.println("A continuación deberá introducir cada uno de los numeros ");
+                for (int i = 0; i < datoso; i++) {
 
                     System.out.println("Ingresa el " + i + " numero:");
                     arreglos[i] = datos.nextInt();
@@ -158,7 +153,7 @@ public class CalculadoraProyecto1 {
 
                 }
 
-                for (int i = 0; i < 10; i++) {
+                for (int i = 0; i < datoso; i++) {
 
                     System.out.println("En la posicion " + (i + 1) + " se guardo: " + arreglos[i]);
 
@@ -168,6 +163,24 @@ public class CalculadoraProyecto1 {
                 //Scanner ent = new Scanner(System.in);
                 break;
 
+            }
+            case "lista": {
+                double sumar = 0;
+                double datoso;
+
+                System.out.println("Introduzca la cnatidad de numeros que tiene su listado");
+                datoso = datos.nextDouble();
+                double[] arreglos = new double[(int) datoso];
+                System.out.println("A continuación deberá introducir cada uno de los numeros ");
+                for (int i = 0; i < datoso; i++) {
+
+                    System.out.println("Numero " + i + " =");
+                    arreglos[i] = datos.nextInt();
+                }
+                for (int i = 0; i < datoso; i++) {
+                    System.out.println("En la posicion " + (i + 1) + " se guardo: " + arreglos[((int) datoso - 1) - i]);
+                }
+                break;
             }
             case "numero maximo": {
                 int numi1;
