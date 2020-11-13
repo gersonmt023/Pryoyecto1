@@ -37,7 +37,7 @@ public class Areas {
         String figura;
         //for(int h=1;h>=1;h++){
 
-        for (int i = 0; i >= 0; i++) {
+        for (;;) {
             System.out.println("Indique la figura la cual quiera averiguar su area(rectangulo,cuadrado,circulo)");
             figura = datos.next();
 
